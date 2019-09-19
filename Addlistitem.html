@@ -1,0 +1,22 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("button").click(function(){
+            //console.log($("#id1").val());
+            var val1=$("#id1").val();
+            //console.log(val1);
+            $("#id2").append("<option>"+val1+"<option>");
+        });
+    });
+    </script> 
+    </head>
+    <body>
+        <input type="text" id="id1" placeholder="Add Fruit">
+        <select id="id2">
+        <option value="Apple">Apple</option>
+       </select>
+       <button>ADD</button>
+    </body>
+    </html> 
+    
