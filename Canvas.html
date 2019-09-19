@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var c=document.getElementById("can1");
+        var ctx=c.getContext("2d");
+        $("#bt1").click(function(){
+            ctx.clearRect(0,0,c.width,c.height);
+            ctx.beginPath()
+            ctx.fillStyle="red";
+            ctx.strokeStyle="black";
+            ctx.lineWidth=5;
+            ctx.restore();
+            ctx.moveTo(200,200);
+            ctx.lineTo(150,300);
+            ctx.lineTo(250,300);
+            ctx.lineTo(200,200);
+            ctx.save();
+            ctx.stroke();
+            ctx.fill();
+        });
+        $("#bt2").click(function(){
+            ctx.clearRect(0,0,c.width,c.height);
+            ctx.beginPath()
+            ctx.fillStyle="red";
+            ctx.strokeStyle="black";
+            ctx.lineWidth=5;
+            ctx.rotate(Math.PI/360);
+            ctx.moveTo(200,200);
+            ctx.lineTo(150,300);
+            ctx.lineTo(250,300);
+            ctx.lineTo(200,200);
+            ctx.stroke();
+            ctx.fill();
+
+        });
+        $("#bt3").click(function(){
+            ctx.clearRect(0,0,c.width,c.height);
+        });
+    });
+    </script>
+    <style>
+    body{
+        text-align: center;
+    }
+    </style>
+    
+</head>
+<body>
+        <canvas id="can1" width="400px" height="400px" style="border: black;border-style: solid" >browser doesn't support</canvas><br>
+        <input type="button" id="bt1" value="DRAW" style="height: 30px;width: 100px ">
+        <input type="button" id="bt2" value="ROTATE"style="height: 30px;width: 100px ">
+        <input type="button" id="bt3" value="CLEAR"style="height: 30px;width: 100px ">
+  
+  </div>  
+</body>
+</html>
